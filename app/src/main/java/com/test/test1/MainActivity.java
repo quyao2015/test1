@@ -4,32 +4,53 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_main2);
-        Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+
+
+        private ImageView imageView;
+        private Button button;
+        private Button button2;
+        @Override        protected  void onCreate(Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            getSupportActionBar().hide();
+            setContentView(R.layout.activity_main);
+            button = (Button) findViewById(R.id.button);
+            button2 = (Button) findViewById(R.id.button2);
+            imageView = (ImageView) findViewById(R.id.imageView);
+            button.setOnClickListener(this);
+            button2.setOnClickListener(this);
+
+        }
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "你惦记我", Toast.LENGTH_SHORT).show();
-            }
-        });
-        Button button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TwoActivity.class);
-                startActivity(intent);
+                switch (v.getId()){
+                    case R.id.button:
+                        imageView.setImageResource(R.mipmap.shulin);
+                        break;
+                    case R.id.button2:
+                        Intent intent = new Intent(MainActivity.this,TwoActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    default:
+                        break;
+
+                }
 
             }
-        });
-    }
-}
+
+
+
+        }
+
+
+
+
+
+

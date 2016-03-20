@@ -7,13 +7,35 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="toast"
         android:id="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="关闭本页面"
         android:id="@+id/button2"
         android:layout_gravity="right" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="请输入账号"
+        android:password="true"
+        android:phoneNumber="false"
+        android:maxLines="2"
+        android:shadowColor="@color/accent_material_light"
+        android:singleLine="false"
+        android:textColor="@android:color/holo_purple" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="这一段文本"
+        android:id="@+id/textView"
+        android:textSize="26sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
